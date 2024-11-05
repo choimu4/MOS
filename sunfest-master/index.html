@@ -19,19 +19,32 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- add scss Styles -->
+     <link rel="stylesheet" href="style_scss.css">
 </head>
 
 <body>
     <header class="site-header">
+        <div class="new-content">
+            <div id="wrapper">
+                <section id="content">
+                    <section class="images">
+                        <img data-speed="0.8" src="https://images.unsplash.com/photo-1556856425-366d6618905d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG5lb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt="">
+                        <img data-speed="0.9" src="https://images.unsplash.com/photo-1520271348391-049dd132bb7c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="">
+                        <img data-speed="1" src="https://images.unsplash.com/photo-1609166214994-502d326bafee?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="">
+                        <img data-speed="1.1" src="https://images.unsplash.com/photo-1589882265634-84f7eb9a3414?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=434&q=80" alt="">
+                        <img data-speed="0.9" src="https://images.unsplash.com/photo-1514689832698-319d3bcac5d5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=434&q=80" alt="">
+                        <img data-speed="1.2" src="https://images.unsplash.com/photo-1535207010348-71e47296838a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="">
+                        <img data-speed="0.8" src="https://images.unsplash.com/photo-1588007375246-3ee823ef4851?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fG5lb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt="">
+                        <img data-speed="1" src="https://images.unsplash.com/photo-1571450669798-fcb4c543f6a4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fG5lb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt="">
+                    </section>
+                </section>
+            </div>
+        </div>
         <div class="header-bar">
             <div class="container-fluid">
                 <div class="row align-items-center">
-                    <div class="col-10 col-lg-4">
-                        <h1 class="site-branding flex">
-                            <a href="#">SUNFEST</a>
-                        </h1>
-                    </div>
-
                     <div class="col-2 col-lg-8">
                         <nav class="site-navigation">
                             <div class="hamburger-menu d-lg-none">
@@ -102,6 +115,7 @@
             </div>
         </div><!-- .container -->
     </div><!-- .hero-content -->
+    
 
     <div class="content-section">
         <div class="container">
@@ -500,6 +514,28 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div><!-- footer-content-wrapper -->
     </footer><!-- site-footer -->
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(window).on('scroll', function() {
+            // 스크롤 위치가 100px을 넘을 때
+            if ($(window).scrollTop() > 100) {
+                $('#first-body').fadeOut(); // 첫 번째 콘텐츠 숨김
+                $('#second-body').fadeIn(); // 두 번째 콘텐츠 보임
+            } else {
+                $('#first-body').fadeIn(); // 첫 번째 콘텐츠 보임
+                $('#second-body').fadeOut(); // 두 번째 콘텐츠 숨김
+            }
+        });
+    </script>
+
+
+    <!-- 1st partial -->
+    <script src='https://assets.codepen.io/16327/gsap-latest-beta.min.js?r=v3.12.0'></script>
+    <script src='https://assets.codepen.io/16327/ScrollTrigger.min.js?r=v3.12.0'></script>
+    <script src='https://assets.codepen.io/16327/ScrollSmoother.min.js'></script>
+    <script src="js/script.js"></script>
+
+    <!-- 2nd partial -->
     <script type='text/javascript' src='js/jquery.js'></script>
     <script type='text/javascript' src='js/masonry.pkgd.min.js'></script>
     <script type='text/javascript' src='js/jquery.collapsible.min.js'></script>
