@@ -26,7 +26,7 @@
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed sidebar-collapse">
 <div class="wrapper">
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -49,12 +49,32 @@
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">MOS</span>
     </a>
-
-
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <!-- 여기에 페이지 내용이 추가됩니다. -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Dashboard</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- subindex.html content will be loaded here -->
+        <div id="subindex-content"></div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
 
   <!-- Footer -->
   <footer class="main-footer">
@@ -107,8 +127,22 @@
 
 <script>
   $(document).ready(function() {
+    // Ensure the sidebar is collapsed by default
+    $('body').addClass('sidebar-collapse');
+    
+    // Load sidebar
     $("#sidebar-container").load("sidebar.html", function() {
       console.log("Sidebar loaded successfully.");
+    });
+    
+    // Load subindex content
+    $("#subindex-content").load("subindex.html", function() {
+      console.log("Subindex content loaded successfully.");
+    });
+    
+    // Handle toggle for the sidebar
+    $('[data-widget="pushmenu"]').click(function() {
+      $('body').toggleClass('sidebar-collapse');
     });
   });
 </script>
