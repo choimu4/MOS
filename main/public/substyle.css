@@ -45,8 +45,10 @@ iframe {
 }
 
 .site-header {
-    position: relative;
+    position: fixed;
     width: 100%;
+    z-index: 999; /* 최상위 레벨로 설정하여 다른 모든 요소 위에 위치 */
+
 }
 
 .site-header figure {
@@ -59,27 +61,59 @@ iframe {
 }
 
 /*------------------------------------------------------------
-## header-bar
+# site-header .header-bar
 ------------------------------------------------------------*/
 .site-header .header-bar {
-    position: absolute;
-    top: 0;
+    position: fixed; /* 화면 상단에 고정 */
+    top: 0; /* 화면 상단 위치 */
     left: 0;
-    z-index: 99;
     width: 100%;
-    padding: 40px 0;
+    z-index: 999; /* 최상위 레벨로 설정하여 다른 모든 요소 위에 위치 */
+    padding: 20px 0;
+    background-color: transparent; /* 기본 배경 투명 */
+    transition: background-color 0.3s ease; /* 배경색 변화를 부드럽게 */
 }
 
+/* 스크롤 시 배경색을 검정으로 변경 */
+.site-header .header-bar.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* 검정색 배경 */
+}
+
+/*------------------------------------------------------------
+# Branding
+------------------------------------------------------------*/
 .header-bar .site-branding {
     margin-bottom: 0;
     font-size: 30px;
     font-weight: 800;
+    color: #fff; /* 텍스트 색상 흰색 */
+    text-align: center; /* 중앙 정렬 */
 }
 
 .header-bar .site-branding a {
-    color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 100%); /* 링크 색상 흰색 */
     text-decoration: none;
+    transition: color 0.3s ease; /* 마우스 오버 시 색상 변화 */
 }
+
+/* 마우스 오버 시 링크 색상 변화 */
+.header-bar .site-branding a:hover {
+    color: #ff9900; /* 오렌지 색상으로 변경 */
+}
+
+/*------------------------------------------------------------
+# Responsive Design
+------------------------------------------------------------*/
+@media (max-width: 767px) {
+    .site-header .header-bar {
+        padding: 15px 0; /* 작은 화면에서는 패딩 줄임 */
+    }
+
+    .header-bar .site-branding {
+        font-size: 24px; /* 모바일에서 글씨 크기 조정 */
+    }
+}
+
 
 /*------------------------------------------------------------
 ### site-navigation
@@ -1989,4 +2023,12 @@ iframe {
 
 .icon-box-3 .entry-header::before {
     content: "03.";
+}
+
+.hidden-input {
+    display: none; /* input 요소 숨김 */
+}
+
+.featured-image {
+    cursor: pointer; /* 클릭 가능하게 설정 */
 }

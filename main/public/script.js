@@ -9,4 +9,5 @@ ScrollSmoother.create({
 	effects: true,
 	onUpdate: self => skewSetter(clamp(self.getVelocity() / -50)),
 	onStop: () => skewSetter(0)
+	
 });

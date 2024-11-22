@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Hello World!</title>
+    <title>DemoPage</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -19,34 +20,7 @@
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="header-bar">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-2 col-lg-8">
-                        <nav class="site-navigation">
-                            <div class="hamburger-menu d-lg-none">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-
-                            <ul>
-                                <li><a href="mainindex.html">HOME</a></li>
-                                <li><a href="ticket.html">TICKET</a></li>
-                                <li><a href="https://github.com/choimu4/MOS">Github</a></li>
-                                <li><a href="contact.html">CONTACT</a></li>
-                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</a></li>
-                                <li><a href="#"><i class="fas fa-search"></i></a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
+    <div id="header-container"></div> <!-- 헤더가 삽입될 위치 -->
     <div class="hero-content">
         <div class="container">
             <div class="row">
@@ -93,7 +67,7 @@
             </div>
         </div><!-- .container -->
     </div><!-- .hero-content -->
-    
+
 
     <div class="content-section">
         <div class="container">
@@ -107,75 +81,51 @@
 
                         <div class="lineup-artists">
                             <div class="lineup-artists-wrap flex flex-wrap">
-                                <figure class="featured-image">
-                                    <a href="#"> <img src="images/KendrickLamar.png" alt=""> </a>
-                                </figure><!-- featured-image -->
-
+                                <figure class="featured-image editable-image">
+                                    <a>
+                                        <img id="artist-image-${artistId}" src="images/KendrickLamar.png" alt="New Artist Image">
+                                    </a>
+                                    <input type="file" id="artist-image-upload-${artistId}" class="hidden-input" accept="image/*">
+                                </figure>
                                 <div class="lineup-artists-description">
                                     <div class="lineup-artists-description-container">
-                                        <div class="entry-title">
-                                            Kendrick Lamar
-                                        </div><!-- entry-title -->
-
-                                        <div class="entry-content">
-                                            <p>By writing high-quality lyrics that stand out with serious considerations and messages about society as a whole, including race, gender, media, and religion, they have achieved the success of releasing historic albums without losing sight of their popularity, and have served as a wake-up call to society beyond the field of hip-hop. Woolly reigns as an artist. </p>
-                                        </div><!-- entry-content -->
-
-                                        <div class="box-link">
-                                            <a href=""><img src="images/box.jpg" alt=""></a>
-                                        </div><!-- box-link -->
-                                    </div><!-- lineup-artists-description-container -->
-                                </div><!-- lineup-artists-description -->
-                            </div><!-- lineup-artists-wrap -->
+                                        <div class="entry-title" contenteditable="true">
+                                            아티스트 이름을 입력해주세요.
+                                        </div>
+                                        <div class="entry-content" contenteditable="true">
+                                            <p>아티스트에 대한 설명을 입력해주세요.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="lineup-artists-wrap flex flex-wrap">
                                 <div class="lineup-artists-description">
-                                    <figure class="featured-image d-md-none">
-                                        <a href="#"> <img src="images/TheWeeknd.png" alt=""> </a>
-                                    </figure><!-- featured-image -->
-
                                     <div class="lineup-artists-description-container">
-                                        <div class="entry-title">
-                                            The Weeknd
-                                        </div><!-- entry-title -->
+                                        <div class="entry-title" contenteditable="true">
+                                            아티스트 이름을 입력해주세요.
+                                        </div>
+                                        <div class="entry-content" contenteditable="true">
+                                            <p>아티스트에 대한 설명을 입력해주세요.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <figure class="featured-image editable-image">
+                                    <label for="artist-image-upload-${artistId}">
+                                        <img id="artist-image-${artistId}" src="images/TheWeeknd.png" alt="New Artist Image">
+                                    </label>
+                                    <input type="file" id="artist-image-upload-${artistId}" class="hidden-input" accept="image/*">
+                                </figure>
+                            `;
+                            </div>
 
-                                        <div class="entry-content">
-                                            <p>He is one of Canada's iconic pop musicians. It features a unique falsetto voice reminiscent of Michael Jackson. In addition, he is one of the pioneering artists of the alternative R&B genre and has created numerous hit songs at the forefront of genre crossover in the modern pop music industry. </p>
-                                        </div><!-- entry-content -->
+                            <!-- + 버튼 -->
+                            <button id="add-artist-button" class="btn btn-primary">+ 아티스트 추가</button>
+                        </div>
 
-                                        <div class="box-link">
-                                            <a href="#"><img src="images/box.jpg" alt=""></a>
-                                        </div><!-- box-link -->
-                                    </div><!-- lineup-artists-description-container -->
-                                </div><!-- lineup-artists-description -->
 
-                                <figure class="featured-image d-none d-md-block">
-                                    <a href="#"> <img src="images/TheWeeknd.png" alt=""> </a>
-                                </figure><!-- featured-image -->
-                            </div><!-- lineup-artists-wrap -->
 
-                            <div class="lineup-artists-wrap flex flex-wrap">
-                                <figure class="featured-image">
-                                    <a href="#"> <img src="images/Jannabi.png" alt=""> </a>
-                                </figure><!-- featured-image -->
 
-                                <div class="lineup-artists-description">
-                                    <div class="lineup-artists-description-container">
-                                        <div class="entry-title">
-                                            Jannabi
-                                        </div><!-- entry-title -->
-
-                                        <div class="entry-content">
-                                            <p>South Korean rock band. Born in 1992, Jannabitti is a two-member band consisting of Choi Jeong-hoon (vocals) and Kim Do-hyeong (guitar). Jannabi is a pure Korean word meaning monkey. </p>
-                                        </div><!-- entry-content -->
-
-                                        <div class="box-link">
-                                            <a href="#"> <img src="images/box.jpg" alt=""></a>
-                                        </div><!-- box-link -->
-                                    </div><!-- lineup-artists-description-container -->
-                                </div><!-- lineup-artists-description -->
-                            </div><!-- lineup-artists-wrap -->
-                        </div><!-- lineup-artists -->
                     </div><!-- lineup-artists-headline -->
                 </div><!-- col-12 -->
             </div><!-- row -->
@@ -224,51 +174,7 @@
 
                                 <h2>Kim Kyung Ho</h2>
                             </div><!-- artist-single -->
-
-                            <div class="col-6 col-md-4 col-lg-3 artist-single">
-                                <figure class="featured-image">
-                                    <a href="#"> <img src="images/QWER.png" alt=""> </a>
-                                    <!-- <a href="#" class="box-link"> <img src="images/box.jpg" alt=""> </a> -->
-                                </figure><!-- featured-image -->
-
-                                <h2>QWER</h2>
-                            </div><!-- artist-single -->
-
-                            <div class="col-6 col-md-4 col-lg-3 artist-single">
-                                <figure class="featured-image">
-                                    <a href="#"> <img src="images/YoonBand.png" alt=""> </a>
-                                    <!-- <a href="#" class="box-link"> <img src="images/box.jpg" alt=""> </a> -->
-                                </figure><!-- featured-image -->
-
-                                <h2>Yoon Do Hyun Band</h2>
-                            </div><!-- artist-single -->
-
-                            <div class="col-6 col-md-4 col-lg-3 artist-single">
-                                <figure class="featured-image">
-                                    <a href="#"> <img src="images/ColdPlay.png" alt=""> </a>
-                                    <!-- <a href="#" class="box-link"> <img src="images/box.jpg" alt=""> </a> -->
-                                </figure><!-- featured-image -->
-
-                                <h2>Coldplay</h2>
-                            </div><!-- artist-single -->
-
-                            <div class="col-6 col-md-4 col-lg-3 artist-single">
-                                <figure class="featured-image">
-                                    <a href="#"> <img src="images/ACDC.png" alt=""> </a>
-                                    <!-- <a href="#" class="box-link"> <img src="images/box.jpg" alt=""> </a> -->
-                                </figure><!-- featured-image -->
-
-                                <h2>AC/DC</h2>
-                            </div><!-- artist-single -->
                         </div><!-- the-complete-lineup-artists -->
-
-                        <div class="row justify-content-center">
-                            <div class="see-complete-lineup">
-                                <div class="entry-footer">
-                                    <a href="#" class="btn">See all lineup</a>
-                                </div>
-                            </div>
-                        </div>
                     </div><!-- the-complete-lineup -->
                 </div><!-- col-12 -->
             </div><!-- row -->
@@ -294,7 +200,8 @@
                                 <figure class="featured-image">
                                     <img src="images/Yonezukenshifetival.png" alt="">
 
-                                    <a href="#" class="entry-content flex flex-column justify-content-center align-items-center">
+                                    <a href="#"
+                                        class="entry-content flex flex-column justify-content-center align-items-center">
                                         <h3>Yonezu Kenshi Festival 2025</h3>
                                         <p>127, Gonghangmunhwa-ro, Jung-gu, Incheon, Republic of Korea</p>
                                     </a>
@@ -307,7 +214,8 @@
                                 <figure class="featured-image">
                                     <img src="images/johncameronmitchellfestival.png" alt="">
 
-                                    <a href="#" class="entry-content flex flex-column justify-content-center align-items-center">
+                                    <a href="#"
+                                        class="entry-content flex flex-column justify-content-center align-items-center">
                                         <h3>John Cameron Mitchell Festival 2024</h3>
                                         <p>294, Itaewon-ro, Yongsan-gu, Seoul, Republic of Korea</p>
                                     </a>
@@ -320,9 +228,10 @@
                                 <figure class="featured-image">
                                     <img src="images/dualipafestival.png" alt="">
 
-                                    <a href="#" class="entry-content flex flex-column justify-content-center align-items-center">
+                                    <a href="#"
+                                        class="entry-content flex flex-column justify-content-center align-items-center">
                                         <h3>Dua Lipa Festival 2024</h3>
-                                        <p>430, Gyeongin-ro, Guro-gu,  Seoul, Republic of Korea</p>
+                                        <p>430, Gyeongin-ro, Guro-gu, Seoul, Republic of Korea</p>
                                     </a>
                                 </figure><!-- featured-image -->
                             </div><!-- next-event-content -->
@@ -333,7 +242,8 @@
                                 <figure class="featured-image">
                                     <img src="images/Yonezukenshifetival.png" alt="">
 
-                                    <a href="#" class="entry-content flex flex-column justify-content-center align-items-center">
+                                    <a href="#"
+                                        class="entry-content flex flex-column justify-content-center align-items-center">
                                         <h3>Yonezu Kenshi Festival 2025</h3>
                                         <p>127, Gonghangmunhwa-ro, Jung-gu, Incheon, Republic of Korea</p>
                                     </a>
@@ -346,7 +256,8 @@
                                 <figure class="featured-image">
                                     <img src="images/johncameronmitchellfestival.png" alt="">
 
-                                    <a href="#" class="entry-content flex flex-column justify-content-center align-items-center">
+                                    <a href="#"
+                                        class="entry-content flex flex-column justify-content-center align-items-center">
                                         <h3>John Cameron Mitchell Festival 2024</h3>
                                         <p>294, Itaewon-ro, Yongsan-gu, Seoul, Republic of Korea</p>
                                     </a>
@@ -359,9 +270,10 @@
                                 <figure class="featured-image">
                                     <img src="images/dualipafestival.png" alt="">
 
-                                    <a href="#" class="entry-content flex flex-column justify-content-center align-items-center">
+                                    <a href="#"
+                                        class="entry-content flex flex-column justify-content-center align-items-center">
                                         <h3>Dua Lipa Festival 2024</h3>
-                                        <p>430, Gyeongin-ro, Guro-gu,  Seoul, Republic of Korea</p>
+                                        <p>430, Gyeongin-ro, Guro-gu, Seoul, Republic of Korea</p>
                                     </a>
                                 </figure><!-- featured-image -->
                             </div><!-- next-event-content -->
@@ -409,9 +321,9 @@
 
                                     <div class="entry-description">
                                         <p>Leave flower bouquets, wreaths, bags, heavy coats, etc.
-                                        in the lobby and watch the performance.
-                                        Please do not eat, drink, or smoke at the performance venue.
-                                        Never run inside the concert hall.</p>
+                                            in the lobby and watch the performance.
+                                            Please do not eat, drink, or smoke at the performance venue.
+                                            Never run inside the concert hall.</p>
                                     </div><!-- entry-description -->
                                 </div><!-- entry-content -->
                             </div><!-- content-wrapper -->
@@ -439,7 +351,8 @@
                                     </div><!-- entry-meta -->
 
                                     <div class="entry-description">
-                                        <p>we will inform you of the statistics for the previous 24 hours before 10:30 am.
+                                        <p>we will inform you of the statistics for the previous 24 hours before 10:30
+                                            am.
                                             Daily/weekly updates are updated on an hourly basis,
                                             and monthly/annual updates are updated on a daily basis.</p>
                                     </div><!-- entry-description -->
@@ -452,75 +365,18 @@
         </div><!-- home-page-last-news -->
     </div>
 
-    <footer class="site-footer">
-        <div class="footer-cover-title flex justify-content-center align-items-center">
-            <h2>SUNFEST</h2>
-        </div>
+    <div id="footer-container"></div>
 
-        <div class="footer-content-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="entry-title">
-                            <a href="#">내 맘대로 홈페이지</a>
-                        </div>
 
-                        <div class="entry-mail">
-                            <a href="#">내맘대로홈페이지@INDUK.COM</a>
-                        </div>
 
-                        <div class="copyright-info">
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</a>
-                        </div>
-
-                        <div class="footer-social">
-                            <ul class="flex justify-content-center align-items-center">
-                                <li><a href="https://github.com/choimu4/MOS"><i class="fab fa-github"></i></a></li>
-                                <li><a href="https://www.induk.ac.kr"><i class="fab fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fab fa-discord"></i></a></li>
-                                <li><a href="#"><i class="fab fa-android"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="loginForm">
-                        <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="username" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" required>
-                        </div>
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary">Login</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Required Scripts -->
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
+
     <!-- GSAP Scripts -->
     <script src='https://assets.codepen.io/16327/gsap-latest-beta.min.js?r=v3.12.0'></script>
     <script src='https://assets.codepen.io/16327/ScrollTrigger.min.js?r=v3.12.0'></script>
@@ -535,26 +391,9 @@
     <script src='js/jquery.countTo.min.js'></script>
     <script src='js/custom.js'></script>
 
-    <!-- Login Form Handling -->
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            
-            // 로그인 처리 로직을 여기에 추가하세요
-            console.log('Username:', username);
-            console.log('Password:', password);
-            
-            // 모달 닫기
-            const modal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
-            modal.hide();
-        });
-    </script>
-
     <!-- Scroll Effect Script -->
     <script>
-        $(window).on('scroll', function() {
+        $(window).on('scroll', function () {
             if ($(window).scrollTop() > 100) {
                 $('#first-body').fadeOut();
                 $('#second-body').fadeIn();
@@ -564,16 +403,20 @@
             }
         });
     </script>
+    <script>
+        // 날짜 업데이트 함수
+        function updateDate() {
+            const now = new Date();
+            const dateElement = document.getElementById('date');
+            dateElement.textContent = now.toLocaleDateString(); // 현지 날짜 포맷으로 표시
+        }
 
-<script>
-    function updateDate() {
-        const now = new Date();
-        const dateElement = document.getElementById('date');
-        dateElement.textContent = now.toLocaleDateString(); // 현지 날짜 포맷으로 표시
-    }
+        updateDate(); // 초기 로드 시 한 번 호출
+    </script>
+    <script src="demoscript.js"></script>
 
-    updateDate(); // 초기 로드 시 한 번 호출
-</script>
+
 
 </body>
+
 </html>

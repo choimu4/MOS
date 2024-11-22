@@ -1,0 +1,45 @@
+<header class="site-header">
+    <div class="header-bar">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-2 col-lg-8">
+                    <nav class="site-navigation">
+                        <div class="hamburger-menu d-lg-none">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <ul>
+                            <li><a href="#">ABOUT</a></li>
+                            <li><a href="#">LINEUP</a></li>
+                            <li><a href="#">TIMETABLE</a></li>
+                            <li><a href="#">TICKET</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">MAP</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<!-- Login Form Handling -->
+<script>
+    // 스크롤 이벤트를 처리하는 코드
+    document.addEventListener('DOMContentLoaded', () => {
+        const headerBar = document.querySelector('.site-header .header-bar');
+
+        // 스크롤 이벤트 리스너 추가
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
+                headerBar.classList.add('scrolled'); // 스크롤이 있으면 'scrolled' 클래스 추가
+            } else {
+                headerBar.classList.remove('scrolled'); // 스크롤이 없으면 'scrolled' 클래스 제거
+            }
+        });
+    });
+</script>
