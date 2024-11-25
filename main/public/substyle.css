@@ -651,13 +651,13 @@ iframe {
 }
 
 /*------------------------------------------------------------
-# homepage-next-events
+# homepage-time-tables
 ------------------------------------------------------------*/
-.homepage-next-events {
+.homepage-time-tables {
     margin-top: 100px;
 }
 
-.homepage-next-events .entry-title p {
+.homepage-time-tables .entry-title p {
     margin: 0;
     padding: 0;
     font-size: 14px;
@@ -665,7 +665,7 @@ iframe {
     color: hsl(0, 0%, 48%);
 }
 
-.homepage-next-events .entry-title h2 {
+.homepage-time-tables .entry-title h2 {
     width: 100%;
     margin: 0;
     font-size: 48px;
@@ -674,28 +674,28 @@ iframe {
 }
 
 /*------------------------------------------------------------
-## .next-event-slider
+## .time-table-slider
 ------------------------------------------------------------*/
-.next-event-slider-wrap {
+.time-table-slider-wrap {
     position: relative;
 }
 
-.next-event-slider {
+.time-table-slider {
     margin-top: 110px;
 }
 
-.next-event-slider .featured-image {
+.time-table-slider .featured-image {
     display: block;
     margin: 0;
     position: relative;
 }
 
-.next-event-slider .featured-image img {
+.time-table-slider .featured-image img {
     display: block;
     width: 100%;
 }
 
-.next-event-slider .entry-content {
+.time-table-slider .entry-content {
     position: absolute;
     top: 0;
     left: 0;
@@ -711,23 +711,23 @@ iframe {
     visibility: hidden;
 }
 
-.next-event-slider .featured-image:hover .entry-content {
+.time-table-slider .featured-image:hover .entry-content {
     opacity: 1;
     visibility: visible;
 }
 
-.next-event-slider .entry-content h3 {
+.time-table-slider .entry-content h3 {
     font-size: 24px;
     font-weight: 600;
     color: hsl(0, 0%, 100%);
 }
 
-.next-event-slider .entry-content p {
+.time-table-slider .entry-content p {
     font-size: 14px;
     color: hsl(0, 0%, 100%);
 }
 
-.next-event-slider-wrap .swiper-button-next {
+.time-table-slider-wrap .swiper-button-next {
     top: auto;
     bottom: -21px;
     right: auto;
@@ -738,12 +738,12 @@ iframe {
     background: transparent;
 }
 
-.next-event-slider-wrap .swiper-button-next img {
+.time-table-slider-wrap .swiper-button-next img {
     width: 100%;
 }
 
 @media screen and (min-width: 768px){
-    .next-event-slider-wrap .swiper-button-next {
+    .time-table-slider-wrap .swiper-button-next {
         bottom: -42px;
         width: 84px;
         height: 84px;
@@ -2032,3 +2032,7 @@ iframe {
 .featured-image {
     cursor: pointer; /* 클릭 가능하게 설정 */
 }
+
+
+
+
