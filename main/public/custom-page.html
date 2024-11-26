@@ -53,32 +53,86 @@
       </ul>
     </nav>
 
-    <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
-      <a href="custom-page.html" class="brand-link">
-        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">MOS</span>
-      </a>
-      <div class="sidebar">
-        <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <li class="nav-item">
-              <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">
-                <i class="nav-icon fas fa-sign-in-alt"></i>
-                <p>Login</p>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </aside>
+   <!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <a href="custom-page.html" class="brand-link">
+    <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <span class="brand-text font-weight-light">MOS</span>
+  </a>
+  <div class="sidebar">
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item">
+          <a href="#" class="nav-link login-link" data-bs-toggle="modal" data-bs-target="#loginModal">
+            <i class="nav-icon fas fa-sign-in-alt"></i>
+            <p>Login</p>
+          </a>
+          <a href="#" class="nav-link register-link" data-bs-toggle="modal" data-bs-target="#RegisterModal">
+            <i class="nav-icon fas fa-sign-in-alt"></i>
+            <p>Register</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>
+<style>
+  .nav-link {
+    pointer-events: auto;
+  }
+
+  .nav-link:hover {
+    cursor: pointer;
+  }
+
+  .nav-link:focus {
+    outline: none;
+  }
+
+  .nav-link.hide {
+    pointer-events: none;
+    opacity: 0.5; /* 비활성화된 링크의 불투명도 조정 */
+  }
+</style>
+
+<script>
+  const loginLink = document.querySelector('.login-link');
+  const registerLink = document.querySelector('.register-link');
+
+  loginLink.addEventListener('mouseover', () => {
+    registerLink.classList.add('hide');
+  });
+
+  loginLink.addEventListener('mouseleave', () => {
+    registerLink.classList.remove('hide');
+  });
+
+  registerLink.addEventListener('mouseover', () => {
+    loginLink.classList.add('hide');
+  });
+
+  registerLink.addEventListener('mouseleave', () => {
+    loginLink.classList.remove('hide');
+  });
+</script>
 
     <!-- Content Wrapper -->
+    <div class="content-wrapper">
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Theme 1</h1>
+            </div>
+          </div>
+        </div>
+      </div>
       <section class="content">
         <div class="container-fluid">
           <iframe id="demo-frame" src="demo.html"></iframe>
         </div>
       </section>
+    </div>
 
     <!-- Footer -->
     <footer class="main-footer">
@@ -99,7 +153,23 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="loginModalLabel">Login</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+        style="
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background: none;
+          border: none;
+          padding: 0;
+        ">
+  <img src="images/free-icon-x-symbol-75519.png" alt="Close"
+       style="
+         width: 20px;
+         height: 20px;
+         display: block;
+         pointer-events: none; /* 클릭 이벤트 제거 */
+       ">
+</button>
         </div>
         <div class="modal-body">
           <form id="loginForm">
@@ -117,5 +187,66 @@
       </div>
     </div>
   </div>
+
+  <!-- Register Modal -->
+  <div class="modal fade" id="RegisterModal" tabindex="0" aria-labelledby="RegisterModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="RegisterModalLabel">Register</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+        style="
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background: none;
+          border: none;
+          padding: 0;
+        ">
+  <img src="images/free-icon-x-symbol-75519.png" alt="Close"
+       style="
+         width: 20px;
+         height: 20px;
+         display: block;
+         pointer-events: none; /* 클릭 이벤트 제거 */
+       ">
+</button>
+        </div>
+        <div class="modal-body">
+          <form id="RegisterForm">
+            <div class="mb-3">
+              <label for="uid" class="form-label">Uid</label>
+              <input type="text" class="form-control" id="uid" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="password" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="password" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="pw" class="form-label">Pw</label>
+              <input type="password" class="form-control" id="pw" required>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="password" class="form-control" id="phone" required>
+            </div>
+            <div class="mb-3">
+              <label for="birth" class="form-label">Birth</label>
+              <input type="password" class="form-control" id="birth" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
 </body>
+
 </html>

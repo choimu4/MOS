@@ -10,7 +10,35 @@
     
 </head>
 <body>
-    
+     <!-- Navigation Bar -->
+ <nav style="
+ display: flex; 
+ justify-content: space-between; 
+ align-items: center; 
+ padding: 10px 20px; 
+ background-color: #1a1721; 
+ color: white; 
+ position: fixed; /* 상단바를 화면에 고정 */
+ top: 0; /* 화면의 가장 위에 위치 */
+ width: 100%; /* 화면 너비를 채움 */
+ z-index: 1000; /* 다른 요소 위에 위치 */
+ box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* 살짝 그림자 추가 (선택 사항) */
+">
+ <div style="font-size: 24px; font-weight: bold;">내 맘대로 홈페이지</div>
+ <ul style="
+     list-style: none; 
+     display: flex; 
+     gap: 15px; 
+     margin: 0 auto; /* 수평 가운데 정렬 */
+     padding: 0;
+ ">
+     <li><a href="mainindex.html" style="color: white; text-decoration: none;">Home</a></li>
+     <li><a href="custom-page.html" style="color: white; text-decoration: none;">Custom</a></li>
+     <li><a href="login.html" style="color: white; text-decoration: none;">Login</a></li>
+     <li><a href="https://github.com" style="color: white; text-decoration: none;">Github</a></li>
+ </ul>
+</nav>  
+
 <!-- partial:index.partial.html -->
 <h1 class="text">내 맘대로 홈페이지</h1>
 <h1 aria-hidden="true" class="text outline-text">내 맘대로 홈페이지</h1>
