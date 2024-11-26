@@ -651,13 +651,13 @@ iframe {
 }
 
 /*------------------------------------------------------------
-# homepage-time-tables
+# homepage-next-events
 ------------------------------------------------------------*/
-.homepage-time-tables {
+.homepage-next-events {
     margin-top: 100px;
 }
 
-.homepage-time-tables .entry-title p {
+.homepage-next-events .entry-title p {
     margin: 0;
     padding: 0;
     font-size: 14px;
@@ -665,7 +665,7 @@ iframe {
     color: hsl(0, 0%, 48%);
 }
 
-.homepage-time-tables .entry-title h2 {
+.homepage-next-events .entry-title h2 {
     width: 100%;
     margin: 0;
     font-size: 48px;
@@ -674,28 +674,28 @@ iframe {
 }
 
 /*------------------------------------------------------------
-## .time-table-slider
+## .next-event-slider
 ------------------------------------------------------------*/
-.time-table-slider-wrap {
+.next-event-slider-wrap {
     position: relative;
 }
 
-.time-table-slider {
+.next-event-slider {
     margin-top: 110px;
 }
 
-.time-table-slider .featured-image {
+.next-event-slider .featured-image {
     display: block;
     margin: 0;
     position: relative;
 }
 
-.time-table-slider .featured-image img {
+.next-event-slider .featured-image img {
     display: block;
     width: 100%;
 }
 
-.time-table-slider .entry-content {
+.next-event-slider .entry-content {
     position: absolute;
     top: 0;
     left: 0;
@@ -711,23 +711,23 @@ iframe {
     visibility: hidden;
 }
 
-.time-table-slider .featured-image:hover .entry-content {
+.next-event-slider .featured-image:hover .entry-content {
     opacity: 1;
     visibility: visible;
 }
 
-.time-table-slider .entry-content h3 {
+.next-event-slider .entry-content h3 {
     font-size: 24px;
     font-weight: 600;
     color: hsl(0, 0%, 100%);
 }
 
-.time-table-slider .entry-content p {
+.next-event-slider .entry-content p {
     font-size: 14px;
     color: hsl(0, 0%, 100%);
 }
 
-.time-table-slider-wrap .swiper-button-next {
+.next-event-slider-wrap .swiper-button-next {
     top: auto;
     bottom: -21px;
     right: auto;
@@ -738,12 +738,12 @@ iframe {
     background: transparent;
 }
 
-.time-table-slider-wrap .swiper-button-next img {
+.next-event-slider-wrap .swiper-button-next img {
     width: 100%;
 }
 
 @media screen and (min-width: 768px){
-    .time-table-slider-wrap .swiper-button-next {
+    .next-event-slider-wrap .swiper-button-next {
         bottom: -42px;
         width: 84px;
         height: 84px;
