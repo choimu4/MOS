@@ -373,7 +373,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 let fileCounter = 1; // 파일 카운터 초기화
 
+// HTML 파일 다운로드 함수
 function downloadHtmlFile() {
+    // 로그인 상태 확인
+    if (!isUserLoggedIn()) {
+        alert("로그인이 필요한 기능입니다.");
+        return;
+    }
+
+    const user = getLoggedInUser();
+    console.log("다운로드 요청 사용자:", user);
+
     disableEditing(); // 수정 기능 비활성화
     removeButtonsExceptAccordion(); // 아코디언 버튼 제외하고 모든 버튼 제거
 
@@ -394,6 +404,21 @@ function downloadHtmlFile() {
 
     fileCounter++; // 다음 파일 이름으로 업데이트
 }
+
+
+// 사용자 로그인 상태 확인 함수
+function isUserLoggedIn() {
+    // 세션에서 로그인 정보를 확인
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    return loggedInUser !== null; // 로그인 정보가 존재하면 true 반환
+}
+
+// 로그인된 사용자 정보 가져오기
+function getLoggedInUser() {
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    return loggedInUser ? JSON.parse(loggedInUser) : null; // JSON 파싱 후 반환
+}
+
 
 
 // 수정 기능 비활성화
@@ -493,4 +518,25 @@ document.addEventListener("DOMContentLoaded", () => {
     setupScrollEffect();
     setupInitialArtists();
     setupInitialTickets(); // 기존 티켓 이미지 초기화
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const SESSION_KEY = "loggedInUser";
+
+    // 로그인 상태 확인
+    const isUserLoggedIn = () => localStorage.getItem(SESSION_KEY) !== null;
+
+    // 현재 로그인된 사용자 정보 가져오기
+    const getLoggedInUser = () => JSON.parse(localStorage.getItem(SESSION_KEY));
+
+    // 세션 정보 표시
+    const updatePageWithSessionInfo = () => {
+        if (isUserLoggedIn()) {
+            const user = getLoggedInUser();
+            document.getElementById("welcomeMessage").textContent = `안녕하세요, ${user.name}님!`;
+        } else {
+            document.getElementById("welcomeMessage").textContent = "로그인 정보가 없습니다.";
+        }
+    };
+
+    updatePageWithSessionInfo();
 });

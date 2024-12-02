@@ -82,7 +82,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">Custom</h1>
+              <h1 class="m-0">테마 1 커스텀 하기</h1>
             </div>
           </div>
         </div>
@@ -182,124 +182,134 @@
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script>
     const SESSION_KEY = "loggedInUser";
-  
+
     // 로그인 상태 확인
     const isUserLoggedIn = () => localStorage.getItem(SESSION_KEY) !== null;
-  
+
     // 현재 로그인된 사용자 정보 가져오기
     const getLoggedInUser = () => JSON.parse(localStorage.getItem(SESSION_KEY));
-  
+
     // 로그인 처리
     const loginUser = (user) => {
-      localStorage.setItem(SESSION_KEY, JSON.stringify(user));
-      updateNavLinks();
-      alert(`안녕하세요, ${user.name}님!`);
+        localStorage.setItem(SESSION_KEY, JSON.stringify(user));
+        updateNavLinks();
+        alert(`안녕하세요, ${user.name}님!`);
     };
-  
+
     // 로그아웃 처리
     const logoutUser = () => {
-      localStorage.removeItem(SESSION_KEY);
-      updateNavLinks();
-      alert("로그아웃되었습니다.");
-      window.location.reload(); // 페이지를 새로고침하여 UI 초기화
+        localStorage.removeItem(SESSION_KEY);
+        updateNavLinks();
+        alert("로그아웃되었습니다.");
+        window.location.reload(); // 페이지를 새로고침하여 UI 초기화
     };
-  
+
     // 회원 세션 저장 (회원가입 시 호출)
     const saveUserSession = (user) => {
-      const existingUsers = JSON.parse(sessionStorage.getItem("users")) || [];
-      existingUsers.push(user);
-      sessionStorage.setItem("users", JSON.stringify(existingUsers));
+        const existingUsers = JSON.parse(sessionStorage.getItem("loggedInUser")) || [];
+        existingUsers.push(user);
+        sessionStorage.setItem("users", JSON.stringify(existingUsers));
     };
-  
+
     // 네비게이션 링크 업데이트
     const updateNavLinks = () => {
-      const loginNavLink = document.getElementById("loginNavLink");
-      const registerNavLink = document.getElementById("registerNavLink");
-  
-      if (isUserLoggedIn()) {
-        const user = getLoggedInUser();
-        loginNavLink.innerHTML = `<i class="fas fa-sign-out-alt"></i> Logout`;
-        loginNavLink.onclick = (e) => {
-          e.preventDefault();
-          logoutUser();
-        };
-        registerNavLink.style.display = "none";
-      } else {
-        loginNavLink.innerHTML = `<i class="fas fa-sign-in-alt"></i> Login`;
-        loginNavLink.setAttribute("data-bs-toggle", "modal");
-        loginNavLink.setAttribute("data-bs-target", "#loginModal");
-        loginNavLink.onclick = null;
-        registerNavLink.style.display = "block";
-      }
-    };
-  
-    document.addEventListener("DOMContentLoaded", () => {
-      // Flatpickr 캘린더 적용
-      flatpickr("#birth", {
-        dateFormat: "Y.m.d",
-        maxDate: "today",
-        locale: "ko"
-      });
-  
-      // 핸드폰 번호 형식 자동 강제
-      document.getElementById("phone").addEventListener("input", (e) => {
-        let value = e.target.value.replace(/[^0-9]/g, ""); // 숫자만 입력
-        if (value.length > 3 && value.length <= 7) {
-          value = `${value.slice(0, 3)}-${value.slice(3)}`;
-        } else if (value.length > 7) {
-          value = `${value.slice(0, 3)}-${value.slice(3, 7)}-${value.slice(7, 11)}`;
-        }
-        e.target.value = value;
-      });
-  
-      // 로그인 폼 제출 이벤트 처리
-      document.getElementById("loginForm").addEventListener("submit", (e) => {
-        e.preventDefault();
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
-  
-        const users = JSON.parse(sessionStorage.getItem("users")) || [];
-        const user = users.find((u) => u.username === username && u.password === password);
-  
-        if (user) {
-          loginUser(user);
-          bootstrap.Modal.getInstance(document.getElementById("loginModal")).hide();
+        const loginNavLink = document.getElementById("loginNavLink");
+        const registerNavLink = document.getElementById("registerNavLink");
+
+        if (isUserLoggedIn()) {
+            const user = getLoggedInUser();
+            loginNavLink.innerHTML = `<i class="fas fa-sign-out-alt"></i> Logout`;
+            loginNavLink.onclick = (e) => {
+                e.preventDefault();
+                logoutUser();
+            };
+            registerNavLink.style.display = "none";
         } else {
-          alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+            loginNavLink.innerHTML = `<i class="fas fa-sign-in-alt"></i> Login`;
+            loginNavLink.setAttribute("data-bs-toggle", "modal");
+            loginNavLink.setAttribute("data-bs-target", "#loginModal");
+            loginNavLink.onclick = null;
+            registerNavLink.style.display = "block";
         }
-      });
-  
-      // 회원가입 폼 제출 이벤트 처리
-      document.getElementById("RegisterForm").addEventListener("submit", (e) => {
-        e.preventDefault();
-        const uid = document.getElementById("uid").value;
-        const email = document.getElementById("email").value;
-        const name = document.getElementById("name").value;
-        const password = document.getElementById("pw").value;
-        const confirmPw = document.getElementById("confirmPw").value;
-        const phone = document.getElementById("phone").value;
-        const birth = document.getElementById("birth").value;
-  
-        // 형식 검사
-        const isPhoneValid = /^010-\d{4}-\d{4}$/.test(phone);
-        const isBirthValid = /^\d{4}\.\d{2}\.\d{2}$/.test(birth);
-  
-        document.getElementById("phoneError").innerText = isPhoneValid ? "" : "전화번호 형식을 맞춰주세요. 예)010-XXXX-XXXX";
-        document.getElementById("birthError").innerText = isBirthValid ? "" : "날짜 형식을 맞춰주세요. 예)YYYY.MM.DD";
-        document.getElementById("pwError").innerText = password === confirmPw ? "" : "비밀번호가 일치하지 않습니다.";
-  
-        if (isPhoneValid && isBirthValid && password === confirmPw) {
-          const user = { username: uid, email, name, password, phone, birth };
-          saveUserSession(user);
-          alert("회원가입이 완료되었습니다.");
-          bootstrap.Modal.getInstance(document.getElementById("RegisterModal")).hide();
+    };
+
+    // 저장 버튼 실행 시 로그인 확인
+    const validateLoginForSave = () => {
+        if (!isUserLoggedIn()) {
+            alert("저장 기능을 사용하려면 로그인해야 합니다.");
+            return false;
         }
-      });
-  
-      // 초기 네비게이션 링크 업데이트
-      updateNavLinks();
+        return true;
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // Flatpickr 캘린더 적용
+        flatpickr("#birth", {
+            dateFormat: "Y.m.d",
+            maxDate: "today",
+            locale: "ko"
+        });
+
+        // 핸드폰 번호 형식 자동 강제
+        document.getElementById("phone").addEventListener("input", (e) => {
+            let value = e.target.value.replace(/[^0-9]/g, ""); // 숫자만 입력
+            if (value.length > 3 && value.length <= 7) {
+                value = `${value.slice(0, 3)}-${value.slice(3)}`;
+            } else if (value.length > 7) {
+                value = `${value.slice(0, 3)}-${value.slice(3, 7)}-${value.slice(7, 11)}`;
+            }
+            e.target.value = value;
+        });
+
+        // 로그인 폼 제출 이벤트 처리
+        document.getElementById("loginForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            const users = JSON.parse(sessionStorage.getItem("users")) || [];
+            const user = users.find((u) => u.username === username && u.password === password);
+
+            if (user) {
+                loginUser(user);
+                bootstrap.Modal.getInstance(document.getElementById("loginModal")).hide();
+            } else {
+                alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+            }
+        });
+
+        // 회원가입 폼 제출 이벤트 처리
+        document.getElementById("RegisterForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const uid = document.getElementById("uid").value;
+            const email = document.getElementById("email").value;
+            const name = document.getElementById("name").value;
+            const password = document.getElementById("pw").value;
+            const confirmPw = document.getElementById("confirmPw").value;
+            const phone = document.getElementById("phone").value;
+            const birth = document.getElementById("birth").value;
+
+            // 형식 검사
+            const isPhoneValid = /^010-\d{4}-\d{4}$/.test(phone);
+            const isBirthValid = /^\d{4}\.\d{2}\.\d{2}$/.test(birth);
+
+            document.getElementById("phoneError").innerText = isPhoneValid ? "" : "전화번호 형식을 맞춰주세요. 예)010-XXXX-XXXX";
+            document.getElementById("birthError").innerText = isBirthValid ? "" : "날짜 형식을 맞춰주세요. 예)YYYY.MM.DD";
+            document.getElementById("pwError").innerText = password === confirmPw ? "" : "비밀번호가 일치하지 않습니다.";
+
+            if (isPhoneValid && isBirthValid && password === confirmPw) {
+                const user = { username: uid, email, name, password, phone, birth };
+                saveUserSession(user);
+                alert("회원가입이 완료되었습니다.");
+                bootstrap.Modal.getInstance(document.getElementById("RegisterModal")).hide();
+            }
+        });
+
+        // 초기 네비게이션 링크 업데이트
+        updateNavLinks();
     });
-  </script>
+</script>
+
   
   
 </body>
