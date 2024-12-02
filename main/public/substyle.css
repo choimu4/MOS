@@ -846,6 +846,11 @@ iframe {
 .home-page-last-news-wrap .entry-content .entry-meta span {
     margin-right: 10px;
 }
+.home-page-last-news-wrap .accordion-body {
+    color: #000; /* 검정색 */
+    font-size: 16px; /* 폰트 크기 조정 (옵션) */
+    line-height: 1.5; /* 줄 간격 조정 (옵션) */
+}
 
 /*------------------------------------------------------------
 # site-footer
@@ -2032,7 +2037,3 @@ iframe {
 .featured-image {
     cursor: pointer; /* 클릭 가능하게 설정 */
 }
-
-
-
-

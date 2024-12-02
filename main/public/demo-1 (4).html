@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
+<html lang="en" dir="ltr"><head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,7 +28,7 @@
 
 <body>
     <header class="site-header">
-        <div class="header-bar">
+        <div class="header-bar scrolled">
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-2 col-lg-8">
@@ -60,13 +57,13 @@
             <div class="row">
                 <div class="col-12 offset-lg-2 col-lg-10">
                     <div class="entry-header">
-                        <h2 contenteditable="true">Festival Page</h2>
+                        <h2>Festival Page</h2>
                     </div><!-- .entry-header -->
                 </div><!-- .col-12 -->
             </div><!-- row -->
         </div><!-- .container -->
         <div class="text-center mt-3">
-            <button id="change-cover-button" class="btn btn-primary">커버 이미지 변경</button>
+            
             <input type="file" id="cover-image-upload" accept="image/*" style="display: none;">
         </div>
     </div><!-- .hero-content -->
@@ -79,7 +76,7 @@
                 <div class="col-12">
                     <div class="lineup-artists-headline">
                         <div class="entry-title">
-                            <p contenteditable="true">BEST ARTIST</p>
+                            <p>BEST ARTIST</p>
                             <h2>The Lineup Artists-Headliners</h2>
                         </div><!-- entry-title -->
 
@@ -87,18 +84,16 @@
                             <div class="lineup-artists-wrap flex flex-wrap">
                                 <figure class="featured-image editable-image">
                                     <a>
-                                        <img id="artist-image-${artistId}" src="images/KendrickLamar.png"
-                                            alt="New Artist Image">
+                                        <img id="artist-image-${artistId}" src="images/KendrickLamar.png" alt="New Artist Image">
                                     </a>
-                                    <input type="file" id="artist-image-upload-${artistId}" class="hidden-input"
-                                        accept="image/*">
+                                    
                                 </figure>
                                 <div class="lineup-artists-description">
                                     <div class="lineup-artists-description-container">
-                                        <div class="entry-title" contenteditable="true">
+                                        <div class="entry-title">
                                             아티스트 이름을 입력해주세요.
                                         </div>
-                                        <div class="entry-content" contenteditable="true">
+                                        <div class="entry-content">
                                             <p>아티스트에 대한 설명을 입력해주세요.</p>
                                         </div>
                                     </div>
@@ -108,7 +103,7 @@
 
 
                             <!-- + 버튼 -->
-                            <button id="add-artist-button" class="btn btn-primary">+ 아티스트 추가</button>
+                            
                         </div>
 
 
@@ -122,7 +117,7 @@
                 <div class="col-12">
                     <div class="the-complete-lineup">
                         <div class="entry-title">
-                            <p contenteditable="true">JUST THE BEST</p>
+                            <p>JUST THE BEST</p>
                             <h2>The Complete Lineup</h2>
                         </div><!-- entry-title -->
 
@@ -132,14 +127,14 @@
                                     <a>
                                         <img id="artist-image-1" src="images/216x250.png">
                                     </a>
-                                    <input type="file" id="artist-image-upload-1" class="hidden-input" accept="image/*">
+                                    
                                 </figure>
-                                <h2 contenteditable="true">아티스트 이름</h2>
+                                <h2>아티스트 이름</h2>
                             </div>
                         </div>
 
                         <!-- 추가 버튼 -->
-                        <button id="add-artist-button-complete" class="btn btn-primary mt-3">+ 아티스트 추가</button>
+                        
 
 
                     </div><!-- the-complete-lineup -->
@@ -152,7 +147,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="entry-title">
-                            <p contenteditable="true">JUST THE BEST</p>
+                            <p>JUST THE BEST</p>
                             <h2>Time Table</h2>
                         </div><!-- entry-title -->
                     </div><!-- col-12 -->
@@ -161,13 +156,17 @@
                 <!-- 타임테이블 섹션 -->
                 <div class="time-table-container">
                     <div class="time-table-block text-center mb-4">
+                        <figure class="editable-image">
+                            <img id="editable-main-image" src="images/930x1000.png" alt="Main Editable Image" style="max-width: 100%; height: auto;">
+                            
+                        </figure>
                     </div>
                 </div>
 
                 <!-- 타임테이블 추가 버튼 -->
                 <div class="row">
                     <div class="col-12 text-center">
-                        <button id="add-time-table-button" class="btn btn-primary mt-3">타임 테이블 추가하기</button>
+                        
                     </div>
                 </div>
             </div><!-- container -->
@@ -179,43 +178,39 @@
             <div class="container">
                 <div class="header">
                     <div class="entry-title">
-                        <p contenteditable="true">JUST THE BEST</p>
+                        <p>JUST THE BEST</p>
                         <h2>TICKET</h2>
                     </div><!-- entry-title -->
                 </div><!-- header -->
 
                 <div id="ticket" class="home-page-last-news-wrap">
                     <div class="row ticket-container">
+                        <!-- 기존 티켓 -->
                         <div class="col-12 col-md-6 ticket-single">
                             <figure class="featured-image editable-image">
-                                <img id="ticket-image-1" src="images/456x271.png" alt="ticket">
-                                <input type="file" id="ticket-image-upload-1" class="hidden-input" accept="image/*">
-                            </figure>
+                                <a>
+                                    <img id="ticket-image-1" src="images/456x271.png" alt="ticket">
+                                </a>
+                                
+                            </figure><!-- featured-image -->
                             <div class="box-link-date">
-                                <a>2024.12.25.</a>
-                            </div>
-                            <div class="link-input-container mt-2">
-                                <input type="text" id="ticket-link-input-1" class="form-control" placeholder="하이퍼링크 입력" />
-                                <button class="btn btn-primary mt-1" onclick="updateTicketNameLink(1)">하이퍼링크 입력</button>
-                            </div>
+                                <a>2024.12.25.</a></div>
+
                             <div class="content-wrapper">
                                 <div class="entry-content">
                                     <div class="entry-header">
-                                        <h2>
-                                            <a id="ticket-name-link-1" href="#" target="_blank" contenteditable="true">티켓 이름 입력</a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                        <h2><a href="#">티켓 이름 입력</a></h2>
+                                    </div><!-- entry-header -->
+                                </div><!-- entry-content -->
+                            </div><!-- .content-wrapper -->
+                        </div><!-- ticket-single -->
 
                     </div><!-- row -->
-                    
 
                     <!-- 티켓 추가 버튼 -->
                     <div class="row">
                         <div class="col-12 text-center">
-                            <button id="add-ticket-button" class="btn btn-primary mt-3">+ 티켓 추가</button>
+                            
                         </div>
                     </div>
                 </div><!-- home-page-last-news-wrap -->
@@ -227,7 +222,7 @@
             <div class="container">
                 <div class="header">
                     <div class="entry-title">
-                        <p contenteditable="true">JUST THE BEST</p>
+                        <p>JUST THE BEST</p>
                         <h2>FAQ</h2>
                     </div><!-- entry-title -->
                 </div><!-- header -->
@@ -237,22 +232,22 @@
                         <!-- FAQ Item 1 -->
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="faqHeading2">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
-                                    <span contenteditable="true">새 질문을 입력해주세요.</span>
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                                    <span>새 질문을 입력해주세요.</span>
                                 </button>
                             </h2>
-                            <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2"
-                                data-bs-parent="#faqAccordion">
-                                <div class="accordion-body" contenteditable="true">
+                            <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
                                     새 질문에 대한 답변을 입력해주세요.
                                 </div>
                             </div>
                         </div>
+
+
                     </div><!-- accordion -->
                     <div class="row">
                         <div class="col-12 text-center">
-                            <button id="add-faq-button" class="btn btn-primary mt-3">+ FAQ 추가</button>
+                            
                         </div>
                     </div>
                 </div><!-- home-page-last-news-wrap -->
@@ -261,14 +256,46 @@
 
 
         <div class="text-center mt-3">
-            <button onclick="downloadHtmlFile()" class="btn btn-success">Download HTML</button>
+            
         </div>
 
-
     </div>
-    <button id="change-footer-image-button" class="btn btn-primary">푸터 이미지 변경</button>
-    <input type="file" id="footer-image-upload" class="hidden-input" accept="image/*" style="display: none;">
-    <div id="footer-container"></div>
+
+    <div id="footer-container"><footer class="site-footer">
+    <div class="footer-cover-title flex justify-content-center align-items-center">
+        <h2>SUNFEST</h2>
+    </div>
+
+    <div class="footer-content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="entry-title">
+                        <a href="#">Test</a>
+                    </div>
+
+                    <div class="entry-mail">
+                        <a href="#">내맘대로홈페이지@INDUK.COM</a>
+                    </div>
+
+                    <div class="copyright-info">
+                        <span>Copyright ©</span>
+                        <script>document.write(new Date().getFullYear());</script>
+                        <span>All rights reserved</span>
+                    </div>
+
+                    <div class="footer-social">
+                        <ul class="flex justify-content-center align-items-center">
+                            <li><a href="https://github.com/choimu4/MOS"><i class="fab fa-github"></i></a></li>
+                            <li><a href="https://www.induk.ac.kr"><i class="fab fa-dribbble"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
 
 
 
@@ -281,18 +308,18 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- GSAP Scripts -->
-    <script src='https://assets.codepen.io/16327/gsap-latest-beta.min.js?r=v3.12.0'></script>
-    <script src='https://assets.codepen.io/16327/ScrollTrigger.min.js?r=v3.12.0'></script>
-    <script src='https://assets.codepen.io/16327/ScrollSmoother.min.js'></script>
+    <script src="https://assets.codepen.io/16327/gsap-latest-beta.min.js?r=v3.12.0"></script>
+    <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js?r=v3.12.0"></script>
+    <script src="https://assets.codepen.io/16327/ScrollSmoother.min.js"></script>
 
     <!-- Other Scripts -->
-    <script src='js/masonry.pkgd.min.js'></script>
-    <script src='js/jquery.collapsible.min.js'></script>
-    <script src='js/swiper.min.js'></script>
-    <script src='js/jquery.countdown.min.js'></script>
-    <script src='js/circle-progress.min.js'></script>
-    <script src='js/jquery.countTo.min.js'></script>
-    <script src='js/custom.js'></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/jquery.collapsible.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/circle-progress.min.js"></script>
+    <script src="js/jquery.countTo.min.js"></script>
+    <script src="js/custom.js"></script>
 
     <!-- Scroll Effect Script -->
     <script>
@@ -324,6 +351,6 @@
 
 
 
-</body>
 
-</html>
+
+</body></html>

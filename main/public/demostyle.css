@@ -13,9 +13,12 @@ body {
 }
 
 iframe {
-    width: 100%; /* 부모 요소에 맞게 조정 */
-    height: auto; /* 내용에 맞게 자동 조정 */
-    border: none; /* 테두리 제거 */
+    width: 100%;
+    /* 부모 요소에 맞게 조정 */
+    height: auto;
+    /* 내용에 맞게 자동 조정 */
+    border: none;
+    /* 테두리 제거 */
 }
 
 @font-face {
@@ -47,7 +50,8 @@ iframe {
 .site-header {
     position: fixed;
     width: 100%;
-    z-index: 999; /* 최상위 레벨로 설정하여 다른 모든 요소 위에 위치 */
+    z-index: 999;
+    /* 최상위 레벨로 설정하여 다른 모든 요소 위에 위치 */
 
 }
 
@@ -64,19 +68,25 @@ iframe {
 # site-header .header-bar
 ------------------------------------------------------------*/
 .site-header .header-bar {
-    position: fixed; /* 화면 상단에 고정 */
-    top: 0; /* 화면 상단 위치 */
+    position: fixed;
+    /* 화면 상단에 고정 */
+    top: 0;
+    /* 화면 상단 위치 */
     left: 0;
     width: 100%;
-    z-index: 999; /* 최상위 레벨로 설정하여 다른 모든 요소 위에 위치 */
+    z-index: 999;
+    /* 최상위 레벨로 설정하여 다른 모든 요소 위에 위치 */
     padding: 20px 0;
-    background-color: transparent; /* 기본 배경 투명 */
-    transition: background-color 0.3s ease; /* 배경색 변화를 부드럽게 */
+    background-color: transparent;
+    /* 기본 배경 투명 */
+    transition: background-color 0.3s ease;
+    /* 배경색 변화를 부드럽게 */
 }
 
 /* 스크롤 시 배경색을 검정으로 변경 */
 .site-header .header-bar.scrolled {
-    background-color: rgba(0, 0, 0, 0.8); /* 검정색 배경 */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* 검정색 배경 */
 }
 
 /*------------------------------------------------------------
@@ -86,19 +96,24 @@ iframe {
     margin-bottom: 0;
     font-size: 30px;
     font-weight: 800;
-    color: #fff; /* 텍스트 색상 흰색 */
-    text-align: center; /* 중앙 정렬 */
+    color: #fff;
+    /* 텍스트 색상 흰색 */
+    text-align: center;
+    /* 중앙 정렬 */
 }
 
 .header-bar .site-branding a {
-    color: hsl(0, 0%, 100%); /* 링크 색상 흰색 */
+    color: hsl(0, 0%, 100%);
+    /* 링크 색상 흰색 */
     text-decoration: none;
-    transition: color 0.3s ease; /* 마우스 오버 시 색상 변화 */
+    transition: color 0.3s ease;
+    /* 마우스 오버 시 색상 변화 */
 }
 
 /* 마우스 오버 시 링크 색상 변화 */
 .header-bar .site-branding a:hover {
-    color: #ff9900; /* 오렌지 색상으로 변경 */
+    color: #ff9900;
+    /* 오렌지 색상으로 변경 */
 }
 
 /*------------------------------------------------------------
@@ -106,11 +121,13 @@ iframe {
 ------------------------------------------------------------*/
 @media (max-width: 767px) {
     .site-header .header-bar {
-        padding: 15px 0; /* 작은 화면에서는 패딩 줄임 */
+        padding: 15px 0;
+        /* 작은 화면에서는 패딩 줄임 */
     }
 
     .header-bar .site-branding {
-        font-size: 24px; /* 모바일에서 글씨 크기 조정 */
+        font-size: 24px;
+        /* 모바일에서 글씨 크기 조정 */
     }
 }
 
@@ -285,7 +302,7 @@ iframe {
     padding: 50px;
     margin: 0;
     font-family: mountains;
-    font-size:120px;
+    font-size: 120px;
     background: -webkit-linear-gradient(#00d0ff, #25ffbf);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -359,7 +376,8 @@ iframe {
     font-weight: 600;
 }
 
-.hero-content .entry-footer a:hover, .hero-content .entry-footer .current {
+.hero-content .entry-footer a:hover,
+.hero-content .entry-footer .current {
     background: -webkit-linear-gradient(#00d0ff, #25ffbf);
     color: hsl(0, 0%, 0%);
 }
@@ -371,7 +389,7 @@ iframe {
     min-height: 4640px;
     width: 100%;
     padding-bottom: 120px;
-    background: url("images/middle-cover.jpg") no-repeat;
+    background: url("images/middle-co   ver.jpg") no-repeat;
     background-size: 100% auto;
 }
 
@@ -704,7 +722,7 @@ iframe {
     height: 100%;
     padding: 30px;
     text-align: center;
-    background: rgba(0,0,0,.75);
+    background: rgba(0, 0, 0, .75);
     text-decoration: none;
     transition: all .5s;
     opacity: 0;
@@ -742,7 +760,7 @@ iframe {
     width: 100%;
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
     .time-table-slider-wrap .swiper-button-next {
         bottom: -42px;
         width: 84px;
@@ -883,46 +901,64 @@ iframe {
     mix-blend-mode: overlay;
     z-index: 2;
 }
+
 .modal-content {
-    background-color: #000; /* 배경을 검정색으로 설정 */
-    color: #fff; /* 글자색을 흰색으로 설정 */
+    background-color: #000;
+    /* 배경을 검정색으로 설정 */
+    color: #fff;
+    /* 글자색을 흰색으로 설정 */
 }
 
 .modal-header {
-    border-bottom: 1px solid #444; /* 헤더 경계선 색상 */
+    border-bottom: 1px solid #444;
+    /* 헤더 경계선 색상 */
 }
 
 .modal-title {
-    font-family: 'Poppins', sans-serif; /* 폰트 스타일 설정 */
-    font-weight: 600; /* 폰트 두께 설정 */
+    font-family: 'Poppins', sans-serif;
+    /* 폰트 스타일 설정 */
+    font-weight: 600;
+    /* 폰트 두께 설정 */
 }
 
 .form-label {
-    color: #fff; /* 레이블 색상 설정 */
+    color: #fff;
+    /* 레이블 색상 설정 */
 }
 
 .form-control {
-    background-color: #f0f0f0; /* 입력창 배경색을 밝은 색으로 설정 */
-    color: #000; /* 입력창 글자색을 검정색으로 설정 */
-    border: 1px solid #ccc; /* 입력창 경계선 색상 */
+    background-color: #f0f0f0;
+    /* 입력창 배경색을 밝은 색으로 설정 */
+    color: #000;
+    /* 입력창 글자색을 검정색으로 설정 */
+    border: 1px solid #ccc;
+    /* 입력창 경계선 색상 */
 }
 
 .form-control:focus {
-    background-color: #ffffff; /* 포커스 시 배경색을 흰색으로 설정 */
-    border-color: #007bff; /* 포커스 시 경계선 색상 */
-    box-shadow: none; /* 포커스 시 그림자 제거 */
+    background-color: #ffffff;
+    /* 포커스 시 배경색을 흰색으로 설정 */
+    border-color: #007bff;
+    /* 포커스 시 경계선 색상 */
+    box-shadow: none;
+    /* 포커스 시 그림자 제거 */
 }
 
 
 .btn-primary {
-    background: linear-gradient(90deg, #00d0ff, #25ffbf); /* 버튼 배경색을 그라데이션으로 설정 */
-    border: none; /* 버튼 경계선 제거 */
-    color: #000; /* 버튼 글자색 설정 */
+    background: linear-gradient(90deg, #00d0ff, #25ffbf);
+    /* 버튼 배경색을 그라데이션으로 설정 */
+    border: none;
+    /* 버튼 경계선 제거 */
+    color: #000;
+    /* 버튼 글자색 설정 */
 }
 
 .btn-primary:hover {
-    background: linear-gradient(90deg, #00b0e1, #1fbf9f); /* 버튼 호버 시 색상 변경 */
+    background: linear-gradient(90deg, #00b0e1, #1fbf9f);
+    /* 버튼 호버 시 색상 변경 */
 }
+
 /*------------------------------------------------------------
 ## .site-footer footer-content-wrapper
 ------------------------------------------------------------*/
@@ -1010,8 +1046,7 @@ iframe {
 /*------------------------------------------------------------
 # site-header
 ------------------------------------------------------------*/
-.about-us .site-header {
-}
+.about-us .site-header {}
 
 .about-us .site-header figure {
     margin: 0;
@@ -1259,7 +1294,8 @@ iframe {
     height: 100%;
 }
 
-@media screen and (min-width: 992px){
+@media screen and (min-width: 992px) {
+
     .testimonials-container,
     .testimonial-featured-image {
         width: 50%;
@@ -1274,7 +1310,8 @@ iframe {
 }
 
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1200px) {
+
     .testimonials-container,
     .testimonial-featured-image {
         width: 50%;
@@ -1286,7 +1323,8 @@ iframe {
 }
 
 
-@media screen and (min-width: 1500px){
+@media screen and (min-width: 1500px) {
+
     .testimonials-container,
     .testimonial-featured-image {
         width: 50%;
@@ -1354,13 +1392,13 @@ iframe {
     line-height: 1.8;
 }
 
-@media screen and (min-width: 576px){
+@media screen and (min-width: 576px) {
     .tabs .tab-nav {
         padding: 20px;
     }
 }
 
-@media screen and (min-width: 992px){
+@media screen and (min-width: 992px) {
     .tabs .tab-content {
         padding: 48px;
     }
@@ -1403,7 +1441,7 @@ iframe {
     color: #040608;
 }
 
-.single-event-details-row p.sold-out span{
+.single-event-details-row p.sold-out span {
     color: #ff0000;
 }
 
@@ -2026,13 +2064,25 @@ iframe {
 }
 
 .hidden-input {
-    display: none; /* input 요소 숨김 */
+    display: none;
+    /* input 요소 숨김 */
 }
 
 .featured-image {
-    cursor: pointer; /* 클릭 가능하게 설정 */
+    cursor: pointer;
+    /* 클릭 가능하게 설정 */
 }
 
 
+
+
+.accordion-body {
+    color: #000;
+    /* 검정색 */
+    font-size: 16px;
+    /* 폰트 크기 조정 (옵션) */
+    line-height: 1.5;
+    /* 줄 간격 조정 (옵션) */
+}
 
 
