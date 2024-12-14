@@ -11,6 +11,6 @@ app.get('/', (req, res) => {
 });
 
 // 서버 포트 8080으로 설정
-app.listen(8080, () => {
-    console.log('Server is running on http://localhost:8080');
+app.listen(80, () => {
+    console.log('Server is running on http://localhost:80');
 });
