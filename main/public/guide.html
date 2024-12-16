@@ -56,13 +56,12 @@
             height: auto; /* 이미지 비율 유지 */
         }
 
-        /* Overlay Button */
+        /* Overlay Button (오른쪽으로 이동) */
         .start-button {
             display: none; /* 기본적으로 숨김 상태 */
             position: fixed;
             bottom: 50px;
-            left: 50%;
-            transform: translateX(-50%);
+            right: 50px; /* 화면 오른쪽에 위치 */
             padding: 10px 20px;
             background-color: #007bff;
             color: white;
@@ -72,12 +71,12 @@
             font-weight: bold;
             box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
             transition: background-color 0.3s ease, transform 0.2s ease;
-            z-index: 1001; /* 다른 요소 위에 표시 */
+            z-index: 1001;
         }
 
         .start-button:hover {
             background-color: #0056b3;
-            transform: translateX(-50%) translateY(-2px); /* 약간 위로 이동 */
+            transform: translateY(-2px); /* 약간 위로 이동 */
         }
 
         /* Footer와 스크롤 테스트를 위한 여백 */
