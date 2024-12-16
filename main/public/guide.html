@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 맘대로 홈페이지 MOS</title>
+    <style>
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #1a1721;
+            color: white;
+            position: fixed; /* 네비게이션 고정 */
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Content (Image) */
+        .image-container {
+            margin-top: 70px; /* 네비게이션 바 높이만큼 여백 추가 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto; /* 이미지 비율 유지 */
+        }
+
+        /* Overlay Button */
+        .start-button {
+            display: none; /* 기본적으로 숨김 상태 */
+            position: fixed;
+            bottom: 50px; /* 화면 하단에 위치 */
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            z-index: 1001; /* 다른 요소 위에 표시 */
+        }
+
+        .start-button:hover {
+            background-color: #0056b3;
+            transform: translateX(-50%) translateY(-2px); /* 약간 위로 이동 */
+        }
+
+        /* Footer와 스크롤 테스트를 위한 여백 */
+        .spacer {
+            height: 1500px; /* 스크롤 확인을 위한 빈 공간 */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div style="font-size: 24px; font-weight: bold;">내 맘대로 홈페이지</div>
+        <ul>
+            <li><a href="mainindex.html">Home</a></li>
+            <li><a href="custom-page.html">Custom</a></li>
+            <li><a href="https://github.com/GenTaram/MOSuser">Github</a></li>
+        </ul>
+    </nav>
+
+    <!-- Image Content -->
+    <div class="image-container">
+        <img src="./images/guide.png" alt="Uploaded Image">
+    </div>
+
+    <!-- Overlay Start Button -->
+    <a href="custom-page.html" class="start-button" id="startButton">시작하기!</a>
+
+
+
+    <!-- JavaScript -->
+    <script>
+        const startButton = document.getElementById('startButton');
+
+        // 스크롤 이벤트 감지
+        window.addEventListener('scroll', () => {
+            const scrolledToBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight;
+
+            // 스크롤이 페이지 끝에 도달하면 버튼 표시
+            if (scrolledToBottom) {
+                startButton.style.display = 'block';
+            } else {
+                startButton.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

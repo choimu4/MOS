@@ -1,7 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Header와 Footer 로드
-    loadComponent("header.html", "header-container");
-    loadComponent("footer.html", "footer-container");
 
     // Scroll Event for Header
     setupScrollEffect();
