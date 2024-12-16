@@ -16,6 +16,17 @@
             margin-bottom: 20px;
             /* 버튼 아래에 20px 마진 추가 */
         }
+                /* 이미지 강조 효과 */
+                .featured-image img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .featured-image img:hover,
+        .time-table-container img:hover { /* 마우스 오버 시 효과 적용 */
+            transform: scale(1.1); /* 10% 확대 */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* 그림자 추가 */
+            cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+        }
     </style>
 
     <!-- Bootstrap CSS -->
