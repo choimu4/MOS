@@ -4,33 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>내 맘대로 홈페이지 MOS</title>
+    <link rel="icon" href="./images/MOS.ico" type="image/x-icon">
+
     <style>
         /* Navigation Bar */
         nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* 좌측 타이틀과 중앙 링크들 간격 */
             align-items: center;
             padding: 10px 20px;
             background-color: #1a1721;
             color: white;
-            position: fixed; /* 네비게이션 고정 */
+            position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
         }
 
-        nav ul {
+        .nav-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
             list-style: none;
             display: flex;
-            gap: 15px;
-            margin: 0;
+            gap: 50px; /* 메뉴 항목 간격 */
+            margin: 0 auto; /* 메뉴를 화면 중앙에 정렬 */
             padding: 0;
         }
 
-        nav a {
+        .nav-links a {
             color: white;
             text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
         }
 
         /* Content (Image) */
@@ -51,7 +60,7 @@
         .start-button {
             display: none; /* 기본적으로 숨김 상태 */
             position: fixed;
-            bottom: 50px; /* 화면 하단에 위치 */
+            bottom: 50px;
             left: 50%;
             transform: translateX(-50%);
             padding: 10px 20px;
@@ -80,8 +89,8 @@
 <body>
     <!-- Navigation Bar -->
     <nav>
-        <div style="font-size: 24px; font-weight: bold;">내 맘대로 홈페이지</div>
-        <ul>
+        <div class="nav-title">내 맘대로 홈페이지</div>
+        <ul class="nav-links">
             <li><a href="mainindex.html">Home</a></li>
             <li><a href="custom-page.html">Custom</a></li>
             <li><a href="https://github.com/GenTaram/MOSuser">Github</a></li>
@@ -96,7 +105,8 @@
     <!-- Overlay Start Button -->
     <a href="custom-page.html" class="start-button" id="startButton">시작하기!</a>
 
-
+    <!-- Footer와 스크롤 테스트를 위한 여백 -->
+    <div class="spacer"></div>
 
     <!-- JavaScript -->
     <script>
